@@ -1,1 +1,1 @@
-from .domain.board_models import Board
+from .domain.models import Board
