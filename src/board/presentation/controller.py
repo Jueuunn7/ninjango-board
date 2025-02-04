@@ -1,4 +1,4 @@
-from ninja_extra import api_controller, http_get, http_post, http_put
+from ninja_extra import api_controller, http_get, http_post, http_put, http_delete
 from typing import List
 from injector import inject
 
@@ -25,6 +25,12 @@ class BoardController:
         self.board_service.create_board(board_data)
         return 201
     
-    @http_put('/{id}')
+    @http_put('/{id}', response=None)
     def update_board(self, id: int, board_data: BoardIn):
         self.board_service.update_board(id, board_data)
+        return 200
+    
+    @http_delete('/{id}', response=None)
+    def delete_board(self, id: int):
+        self.board_service.delete_board(id)
+        return 204

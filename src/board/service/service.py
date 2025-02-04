@@ -38,11 +38,19 @@ class BoardService:
     
     @transaction.atomic
     def update_board(self, id, board_data):
-        board = self.board_repository.find_by_id(id).doesNotExists()
+        board = self.board_repository.find_by_id(id)\
+            .NotFound(BoardNotFoundException)
 
-        board.title = board_data['title']
-        board.content = board_data['content']
+        board.title = board_data.title
+        board.content = board_data.content
 
         board.save()
 
         return board
+    
+    @transaction.atomic
+    def delete_board(self, id):
+        board = self.board_repository.find_by_id(id)\
+            .NotFound(BoardNotFoundException)
+        board.delete()
+        
