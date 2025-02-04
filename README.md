@@ -1,6 +1,5 @@
 # ninjango-board
-ninja-extra를 사용해서 DRF의 여러 단점과 ninja에 단점을 줄여 CRUD 게시판을 만듭니다.
-https://jueuunn7.tistory.com/28
+ninja-extra를 사용해서 DRF의 여러 단점과 ninja에 단점을 줄여 CRUD 게시판을 만듭니다. https://jueuunn7.tistory.com/28   
 
 ## 설명
 
@@ -15,7 +14,7 @@ class BoardController:
         self.board_service = board_service
 ```
 
----
+
 ### 메서드 체이닝과 데코레이터로 데이터 검증 단순화
 반복되는 `if not data` 구문을 데코레이터를 사용해서 단순화
 ```py
