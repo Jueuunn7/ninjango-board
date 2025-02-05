@@ -84,8 +84,8 @@ DATABASES = {
 }
 
 MIGRATION_MODULES = {
-    'board': 'board.domain.migrations',
-    'comment': 'comment.domain.migrations'
+    'board': 'board.infra.migrations',
+    'comment': 'comment.infra.migrations'
 }
 
 
