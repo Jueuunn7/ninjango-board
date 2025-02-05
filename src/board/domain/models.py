@@ -9,4 +9,4 @@ class Board(models.Model):
         db_table = "board"
 
     def __str__(self):
-        return self.name
+        return self.title

@@ -6,8 +6,8 @@ from core.decorator.repository import Repository
 
 class BoardRepository:
     def find_all(self) -> List[Board]:
-        return Board.objects.all()
-    
+        return Board.objects.all().prefetch_related('comments')
+        
     @Repository.notfound
     def find_by_id(self, id) -> Board:
         return Board.objects.filter(id=id).first()

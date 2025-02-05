@@ -2,6 +2,7 @@ from django.db import transaction
 from typing import List
 from injector import inject
 
+from comment.presentation.schema import CommentOut
 from ..domain.repository import BoardRepository
 from ..domain.models import Board
 from ..presentation.schema import BoardOut
@@ -19,6 +20,12 @@ class BoardService:
                 id=b.id,
                 title=b.title,
                 content=b.content,
+                comments=[
+                    CommentOut(
+                        content=c.content
+                    )
+                    for c in b.comments.all()
+                ]
             )
             for b in self.board_repository.find_all()
         ]

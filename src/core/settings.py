@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "ninja_extra",
     "board",
+    "comment"
 ]
 
 MIDDLEWARE = [
@@ -84,6 +85,7 @@ DATABASES = {
 
 MIGRATION_MODULES = {
     'board': 'board.domain.migrations',
+    'comment': 'comment.domain.migrations'
 }
 
 
