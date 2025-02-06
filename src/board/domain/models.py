@@ -7,6 +7,7 @@ class Board(models.Model):
 
     class Meta:
         db_table = "board"
+        indexes = [models.Index(fields=['title'], name='single_index')]
 
     def __str__(self):
         return self.title

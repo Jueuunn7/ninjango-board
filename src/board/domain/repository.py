@@ -1,6 +1,6 @@
 from typing import List
 
-from ..models import Board
+from .models import Board
 from core.decorator.repository import Repository
     
 
