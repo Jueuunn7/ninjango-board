@@ -6,7 +6,7 @@ from comment.presentation.schema import CommentOut
 from ..domain.repository import BoardRepository
 from ..domain.models import Board
 from ..presentation.schema import BoardOut
-from ..exceptions import BoardNotFoundException
+from ...core.exceptions.exceptions import BoardNotFoundException
 
 
 class BoardService:
